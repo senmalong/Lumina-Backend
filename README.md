@@ -1,26 +1,38 @@
-# Lumina Network Backend & Contracts
+# Lumina-Backend
 
-This repository contains the Lumina Network ecosystem, including the Node.js backend API and the Soroban Rust smart contracts.
+Backend services and smart contracts for the Lumina Network ecosystem, featuring a NestJS/Express API, database migration system, event worker queues, and on-chain vesting integrations.
 
-- `/backend`: Node.js Express API for managing vesting schedules, claims, and providing off-chain analytics.
-- `/contracts`: Soroban (Rust) smart contracts for on-chain vesting enforcement.
-- `/docs`: Detailed implementation summaries, architecture guides, and API documentation.
-- `/kubernetes`: K8s deployment manifests for scalable infrastructure.
-- `/scripts`: Utility scripts for deployment, backups, and maintenance.
+## 🚀 Key Features
+* **Vesting & Claims Management:** Web APIs for creating and tracking vesting vaults, managing claims, and verifying off-chain/on-chain states.
+* **Event Worker & Queues:** Background workers for monitoring Soroban events, database syncing, and message queues via BullMQ/RabbitMQ.
+* **Robust Core Contracts:** Soroban-based smart contract integrations supporting secure token vesting.
 
-See [DOCUMENTATION.md](./DOCUMENTATION.md) for the complete documentation, including API reference, architecture guides, implementation summaries, and deployment guides.
+## 🛠️ Tech Stack
+* **Language/Framework:** Node.js (NestJS / Express) / Rust (Soroban)
+* **Key Dependencies:** `@stellar/stellar-sdk`, `@nestjs/core`, `knex`, `pg`
 
-## Getting Started
+## 📦 Getting Started
 
-### Smart Contracts (Rust)
+### Prerequisites
+Ensure you have the required toolchains installed:
+* Node.js (v20 or higher recommended)
+* Rust toolchain (cargo, rustc)
+* PostgreSQL database
+
+### Installation & Local Setup
 ```bash
-cd contracts && cargo test
+# Clone the repository (if running manually)
+git clone https://github.com/Lumina-etwork/Lumina-Backend
+
+# Install dependencies or build
+npm install
+
+# Run database migrations
+npm run migrate
+
+# Start the API server
+npm run start
 ```
 
-### Backend (Node.js)
-```bash
-cd backend && npm install && npm start
-```
-
-## License
-MIT
+## 🤝 Contributing
+Contributions are highly welcome. Please ensure your commits are cryptographically signed using GPG or SSH keys. For major structural changes, please open an issue first to discuss your proposal.
